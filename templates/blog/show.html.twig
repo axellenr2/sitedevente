@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
- <article>
-        <h2>{{ article.title }}</h2>
-        <div class="metadata"> Article dans la catégorie {{ article.category.title }} </div>
-        <div class="content">
-            <img src="{{ article.image }}" alt="">
-            {{ article.content | raw }}
-           <h3> {{ article.prix | raw }}  €</h3>
-        </div>
-    {% if LignePanierForm  %} 
-        {{form_start(LignePanierForm) }}
-            {{form_row(LignePanierForm.quantitearticle, {'label': 'Nombre d\'articles:','attr' : {'placeholder':"1,2,3...? "}})}}
-            <button type="submit" class="btn btn-primary">Ajouter au panier</button>
-        {{form_end(LignePanierForm)}}
-        {% else  %}
-        <h1> Vous devez être connecter pour ajouter au panier </h1>
-    {% endif %}
-        
-        
+    <article>
+            <h2>{{ article.title }}</h2>
+            <div class="metadata"> Article dans la catégorie {{ article.category.title }} </div>
+            <div class="content">
+                <img src="{{ article.image }}" alt="">
+                {{ article.content | raw }}
+             <h3> {{ article.prix | raw }}  €</h3>
+            </div>
+        {% if LignePanierForm  %} 
+            {{form_start(LignePanierForm) }}
+                {{form_row(LignePanierForm.quantitearticle, {'label': 'Nombre d\'articles:','attr' : {'placeholder':"1,2,3...? "}})}}
+                <button type="submit" class="btn btn-primary">Ajouter au panier</button>
+            {{form_end(LignePanierForm)}}
+            {% else  %}
+            <h1> Vous devez être connecter pour ajouter au panier </h1>
+        {% endif %}
+            
+            
     </article>
     <section id="commentaires">
-    <br>
+     <br>
         <p> Commentaires : </p>
         {% for comment in article.comments %}
         <ul class="list-group">
@@ -52,12 +52,11 @@
             Connexion</a>
         {% endif %}
     </section>
-
-<style>
-     
-    p{
-    color: #aa66cc;
-    text-align: center;
-    font-size:  50px;
-     }
+    <style> 
+        p{
+        color: #aa66cc;
+        text-align: center;
+        font-size:  50px;
+        }
+    </style>
 {% endblock %}
