@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+        
+    <section id="Infos">
+    <br>
+    <br>
+        <h1> Mes informations personnel </h1>
+        <br>
+    <style>
+    p{
+        color: #aa66cc;
+    }
+    .t{
+        font-size: 20px; 
+    }
+    </style>
+<p class="t"> Mon email : </p> 
+<p>{{ app.user.getEmail() }} </p>
+<p class="t"> Mon nom : </p> 
+<p>{{ app.user.getUsername() }} </p>
+<p class="t"> Mon adresse : </p> 
+<p>{{ app.user.getAdresse() }} </p>
+<p class="t"> Vos précèdentes commandes : </p> 
+<p> 80€ lors de votre 1 commande </p>
+<p> 50€ lors de votre 2 commande </p>
+
+
+{% endblock %}
+

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} AXOS {% endblock %}
+
+{% block body %}
+<section class="articles">
+<div class="row">
+
+{% for article in articles %}
+    <article>
+        {# <h2>{{ article.title }}</h2>
+        <div class="metadata"> Ecrit le {{ article.createdAt | date ('d/m/Y') }} </div>
+        <div class="content">
+            <img src="{{ article.image }}" alt="">
+            {{ article.content | raw }}
+            <a href="{{ path('blog_show', {'id' : article.id })}}" class="btn btn-primary"> Lire la suite </a>
+        </div> #}
+   
+    <div class="card" style="width: 18rem; margin:1em;">
+  <img class="card-img-top" src="{{ article.image }}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{ article.title }}</h5>
+    <p class="card-price">{{ article.prix | raw }} €</p>
+
+    <a href="{{ path('blog_show', {'id' : article.id })}}" class="btn btn-primary">Je le veux !</a>
+  </div>
+</div>
+ </article>
+{% endfor %}
+</div>
+
+    
+
+</section>
+{% endblock %}
+

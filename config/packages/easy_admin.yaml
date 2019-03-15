@@ -1,0 +1,32 @@
+easy_admin:
+  entities:
+    Article:
+      class: App\Entity\Article
+      label: 'Articles'
+      list:
+        fields: [title', { property: 'image', type: 'image' }, 'content', 'prix', 'category.title', 'comments']
+      form:
+        fields: [title', { property: 'image', type: 'url' }, 'content', 'prix']
+    User:
+      class: App\Entity\User
+      label: 'Clients'
+      list:
+        fields: [ 'email', 'username', 'password']
+      form:
+        fields: [ 'email', 'username', 'password']
+    Comment:
+      class: App\Entity\Comment
+      label: 'Commentaires'
+      list:
+        fields: ['author', 'content', 'note']
+      form:
+        fields: ['author', 'content', 'note']
+  site_name: 'AXOS'
+  design:
+    assets:
+        # all kinds of assets are supported and linked accordingly
+        css:
+            - 'https://bootswatch.com/4/lux/bootstrap.min.css'
+        favicon:
+            path: '/img/coeur.png'
+            mime_type: 'image/png'
