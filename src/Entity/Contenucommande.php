@@ -17,7 +17,7 @@ class Contenucommande
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\commande", inversedBy="contenucommandes")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Commande", inversedBy="contenucommandes")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;

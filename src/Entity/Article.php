@@ -73,6 +73,17 @@ class Article
      * @ORM\OneToMany(targetEntity="App\Entity\LignePanier", mappedBy="LignesPanier")
      */
     private $lignePaniers;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $Quantite;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $barcode;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -219,6 +230,30 @@ class Article
                 $lignePanier->setLignesPanier(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getQuantite(): ?int
+    {
+        return $this->Quantite;
+    }
+
+    public function setQuantite(?int $Quantite): self
+    {
+        $this->Quantite = $Quantite;
+
+        return $this;
+    }
+
+    public function getBarcode(): ?int
+    {
+        return $this->barcode;
+    }
+
+    public function setBarcode(?int $barcode): self
+    {
+        $this->barcode = $barcode;
 
         return $this;
     }
